@@ -1,15 +1,21 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const swig = require('swig');
 swig.setDefaults({ cache: false });
+
 const models = require('./models');
 
 const app = express();
 app.set('view engine', 'html');
 app.engine('html', swig.renderFile);
 
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(require('morgan')('dev'));
 
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res, next)=> {
   res.render('index');
