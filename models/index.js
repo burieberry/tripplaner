@@ -4,10 +4,6 @@ const conn = new Sequelize(process.env.DATABASE_URL, {
   logging: false
 });
 
-const sync = ()=> {
-  return conn.sync({ force: true });
-};
-
 const Place = conn.define('place', {
   address: {
     type: Sequelize.STRING
@@ -37,9 +33,11 @@ const Hotel = conn.define('hotel', {
   amenities: {
     type: Sequelize.STRING
   }
-})
+});
 
-
+const sync = ()=> {
+  return conn.sync({ force: true });
+};
 
 module.exports = {
   sync,
