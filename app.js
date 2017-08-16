@@ -7,7 +7,7 @@ swig.setDefaults({ cache: false });
 const models = require('./models');
 const Hotel = require('./models').models.Hotel,
       Restaurant = require('./models').models.Restaurant,
-      Activity = require('./models').models.Restaurant;
+      Activity = require('./models').models.Activity;
 
 const app = express();
 app.set('view engine', 'html');
@@ -41,33 +41,7 @@ app.get('/', (req, res, next) => {
         activities: model.activities
       })
     })
-    .catch(console.error);
-
-  // res.render('index', {
-  //   hotels: model.hotels,
-  //   restaurants: model.restaurants,
-  //   activities: model.activities
-  // })
-  // .next();
-
-  // Hotel.findAll()
-  //   .then(hotels => {
-  //     model.hotels = hotels;
-  //     return Restaurant.findAll();
-  //   })
-  //   .then(restaurants => {
-  //     model.restaurants = restaurants;
-  //     return Activity.findAll();
-  //   })
-  //   .then(activities => {
-  //     model.activities = activities;
-  //     res.render('index', {
-  //       hotels: model.hotels,
-  //       restaurants: model.restaurants,
-  //       activities: model.activities
-  //     });
-  //   })
-    // .catch(next);
+    .catch(next);
 });
 
 app.use((req, res, next)=> {
