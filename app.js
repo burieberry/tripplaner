@@ -18,9 +18,7 @@ app.use(bodyParser.json());
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/', express.static(path.join(__dirname, 'node_modules')));
 
-app.get('/', (req, res, next)=> {
-  res.render('index');
-});
+app.use('/', require('./routes'));
 
 app.use((req, res, next)=> {
   const error = new Error('page not found');
