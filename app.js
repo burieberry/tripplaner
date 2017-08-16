@@ -5,6 +5,9 @@ const swig = require('swig');
 swig.setDefaults({ cache: false });
 
 const models = require('./models');
+const Hotel = require('./models').models.Hotel,
+      Restaurant = require('./models').models.Restaurant,
+      Activity = require('./models').models.Restaurant;
 
 const app = express();
 app.set('view engine', 'html');
@@ -18,7 +21,54 @@ app.use(bodyParser.json());
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/', express.static(path.join(__dirname, 'node_modules')));
 
-app.use('/', require('./routes'));
+app.get('/', (req, res, next) => {
+  let model = {};
+  Promise.all([
+    Hotel.findAll(),
+    Restaurant.findAll(),
+    Activity.findAll()
+    ])
+    .then(([ hotels, restaurants, activities ]) => {
+      model.hotels = hotels;
+      model.restaurants = restaurants;
+      model.activities = activities;
+      return model;
+    })
+    .then((model) => {
+      return res.render('index', {
+        hotels: model.hotels,
+        restaurants: model.restaurants,
+        activities: model.activities
+      })
+    })
+    .catch(console.error);
+
+  // res.render('index', {
+  //   hotels: model.hotels,
+  //   restaurants: model.restaurants,
+  //   activities: model.activities
+  // })
+  // .next();
+
+  // Hotel.findAll()
+  //   .then(hotels => {
+  //     model.hotels = hotels;
+  //     return Restaurant.findAll();
+  //   })
+  //   .then(restaurants => {
+  //     model.restaurants = restaurants;
+  //     return Activity.findAll();
+  //   })
+  //   .then(activities => {
+  //     model.activities = activities;
+  //     res.render('index', {
+  //       hotels: model.hotels,
+  //       restaurants: model.restaurants,
+  //       activities: model.activities
+  //     });
+  //   })
+    // .catch(next);
+});
 
 app.use((req, res, next)=> {
   const error = new Error('page not found');

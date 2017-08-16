@@ -2,20 +2,7 @@
 
 {% block content %}
 
-{% for model in models %}
-  <section>
-    <label>{{ model.name }}</label>
-    <select name="{{  }} ">
-      {% for hotel in model.hotel %}
-      <option value="{{ hotel.id }}">{{ hotel.name }}</option>
-      {% endfor %}
-    </select>
-  </section>
-{% endfor %}
-
-
-
-<!-- <section>
+<section>
   <label>Hotels:</label>
   <select name="hotelId">
     {% for hotel in hotels %}
@@ -34,5 +21,6 @@
     <option value="{{ activity.id }}">{{ activity.name }}</option>
     {% endfor %}
   </select>
-</section> -->
+</section>
+
 {% endblock %}
