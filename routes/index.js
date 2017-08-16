@@ -1,8 +1,13 @@
 const router = require('express').Router();
+const db = require('../models');
 
 router.get('/', function(req, res, next) {
-  console.log(req.body);
-  res.render('index', {  });
+  db.getAllModels()
+    .then(models => {
+      console.log(models.get());
+      res.render('index', { models });
+    })
+    .next();
 });
 
 module.exports = router;

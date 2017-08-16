@@ -1,10 +1,38 @@
 {% extends './layout.html' %}
 
 {% block content %}
-<section>
-  <label></label>
-  <select name="">
-    <option value=""></option>
+
+{% for model in models %}
+  <section>
+    <label>{{ model.name }}</label>
+    <select name="{{  }} ">
+      {% for hotel in model.hotel %}
+      <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+      {% endfor %}
+    </select>
+  </section>
+{% endfor %}
+
+
+
+<!-- <section>
+  <label>Hotels:</label>
+  <select name="hotelId">
+    {% for hotel in hotels %}
+    <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+    {% endfor %}
   </select>
-</section>
+  <label>Restaurants:</label>
+  <select name="restaurantId">
+    {% for restaurant in restaurants %}
+    <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+    {% endfor %}
+  </select>
+  <label>Activities:</label>
+  <select name="activityId">
+    {% for activity in activities %}
+    <option value="{{ activity.id }}">{{ activity.name }}</option>
+    {% endfor %}
+  </select>
+</section> -->
 {% endblock %}

@@ -59,12 +59,33 @@ Hotel.belongsTo(Place);
 Activity.belongsTo(Place);
 Restaurant.belongsTo(Place);
 
+const getAllModels = () => {
+  let data = {};
+
+  return Hotel.findAll()
+    .then(hotels => {
+      data.hotels = hotels;
+      return Restaurant.findAll()
+    })
+    .then((restaurants) => {
+      data.restaurants = restaurants;
+      return Activity.findAll()
+    })
+    .then((activities) => {
+      data.activities = activities;
+      return data;
+    });
+}
+
+
+
 const sync = () => {
   return conn.sync({ force: true });
 };
 
 module.exports = {
   sync,
+  getAllModels,
   models: {
     Place,
     Hotel,
