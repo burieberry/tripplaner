@@ -2,25 +2,35 @@
 
 {% block content %}
 
-<section>
-  <label>Hotels:</label>
-  <select name="hotelId">
-    {% for hotel in hotels %}
-    <option value="{{ hotel.id }}">{{ hotel.name }}</option>
-    {% endfor %}
-  </select>
-  <label>Restaurants:</label>
-  <select name="restaurantId">
-    {% for restaurant in restaurants %}
-    <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
-    {% endfor %}
-  </select>
-  <label>Activities:</label>
-  <select name="activityId">
-    {% for activity in activities %}
-    <option value="{{ activity.id }}">{{ activity.name }}</option>
-    {% endfor %}
-  </select>
+<section style="margin: 30px 0">
+  <ul class="list-unstyled">
+    <li><label>Hotels:</label>
+    <select name="hotelId">
+      {% for hotel in hotels %}
+      <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+      {% endfor %}
+    </select>
+    </li>
+
+    <li>
+    <label>Restaurants:</label>
+    <select name="restaurantId">
+      {% for restaurant in restaurants %}
+      <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+      {% endfor %}
+    </select>
+    </li>
+
+    <li>
+    <label>Activities:</label>
+    <select name="activityId">
+      {% for activity in activities %}
+      <option value="{{ activity.id }}">{{ activity.name }}</option>
+      {% endfor %}
+    </select>
+    </li>
+  </ul>
 </section>
+
 
 {% endblock %}
