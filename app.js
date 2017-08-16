@@ -16,6 +16,7 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.json());
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, 'node_modules')));
 
 app.get('/', (req, res, next)=> {
   res.render('index');
