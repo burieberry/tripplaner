@@ -32,9 +32,14 @@ app.use((err, req, res, next)=> {
 });
 
 const port = process.env.PORT || 3000;
-models.sync()
-  .then(()=> {
-    app.listen(port, ()=> {
-      console.log(`listening on port ${port}`);
-    });
-  });
+
+app.listen(port, ()=> {
+  console.log(`listening on port ${port}`);
+});
+
+// models.sync()
+//   .then(()=> {
+//     app.listen(port, ()=> {
+//       console.log(`listening on port ${port}`);
+//     });
+//   });

@@ -55,20 +55,11 @@ const Restaurant = conn.define('restaurant', {
   }
 });
 
-Hotel.belongsTo(Place);
-Activity.belongsTo(Place);
-Restaurant.belongsTo(Place);
-
-const sync = () => {
-  return conn.sync({ force: true });
-};
-
 module.exports = {
-  sync,
   models: {
     Place,
     Hotel,
     Activity,
     Restaurant
   }
-};
+}
