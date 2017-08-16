@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const conn = new Sequelize('postgres://localhost:5432/tripplanner_db', {
+const conn = new Sequelize(process.env.DATABASE_URL, {
   logging: false
 });
 
