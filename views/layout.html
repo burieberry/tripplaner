@@ -1,14 +1,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Trip Planner - {% block title %}{% endblock %}</title>
+    <title>TripPlanner - {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/stylesheets/styles.css"/>
   </head>
-  <body class="container">
-    <h1>TripPlanner Static UI</h1>
-    {% block content %}
-    {% endblock %}
+  <body>
+    <h1 id="headline">TripPlanner</h1>
+
+    <nav></nav>
+
+    <section>
+      {% block content %}
+      <!-- content goes here -->
+      {% endblock %}
+    </section>
+
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/jquery/jquery.min.js"></script>
   </body>
