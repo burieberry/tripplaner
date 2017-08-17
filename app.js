@@ -15,11 +15,12 @@ app.engine('html', swig.renderFile);
 
 app.use(require('morgan')('dev'));
 
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.use('/', express.static(path.join(__dirname, 'node_modules')));
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
+app.use('/jQuery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 app.get('/', (req, res, next) => {
   let model = {};
