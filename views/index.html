@@ -4,44 +4,41 @@
 
 {% block content %}
 
-<aside id="menu">
-  <ul class="list-unstyled">
-    <li><label>Hotels:</label>
-    <select name="hotelId">
-      {% for hotel in hotels %}
-      <option value="{{ hotel.id }}">{{ hotel.name }}</option>
-      {% endfor %}
-    </select>
-    </li>
+<section class="row">
+  <section class="col-sm-8">
+    <div>Map will go here.</div>
+  </section>
 
-    <li>
-    <label>Restaurants:</label>
-    <select name="restaurantId">
-      {% for restaurant in restaurants %}
-      <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
-      {% endfor %}
-    </select>
-    </li>
+  <aside class="col-sm-4">
+    <ul class="list-unstyled" id="menu">
+      <li><label>Hotels:</label>
+      <select name="hotelId">
+        {% for hotel in hotels %}
+        <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+        {% endfor %}
+      </select>
+      </li>
 
-    <li>
-    <label>Activities:</label>
-    <select name="activityId">
-      {% for activity in activities %}
-      <option value="{{ activity.id }}">{{ activity.name }}</option>
-      {% endfor %}
-    </select>
-    </li>
-  </ul>
+      <li>
+      <label>Restaurants:</label>
+      <select name="restaurantId">
+        {% for restaurant in restaurants %}
+        <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+        {% endfor %}
+      </select>
+      </li>
 
-  <aside id="myTrip">
-
+      <li>
+      <label>Activities:</label>
+      <select name="activityId">
+        {% for activity in activities %}
+        <option value="{{ activity.id }}">{{ activity.name }}</option>
+        {% endfor %}
+      </select>
+      </li>
+    </ul>
   </aside>
 
-</aside>
-
-<section id="map">
-
 </section>
-
 
 {% endblock %}

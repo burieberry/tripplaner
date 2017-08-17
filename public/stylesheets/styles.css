@@ -2,22 +2,25 @@ body {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  font-size: 16px; }
+  font-size: 16px;
+}
 
 #headline {
   border-bottom: 2px solid #999;
   font-size: 2em;
-  padding: 0 20px 10px 40px; }
+  padding: 0 20px 10px 40px;
+}
 
 #menu {
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  display: inline-block;
+  border: 1px solid #ccc;
+  /*display: inline-block;*/
   font-size: 14px;
   padding: 30px 10px 30px 20px;
-  width: 350px; }
+  width: 350px;
+}
 
 label,
 option {
   display: block;
-  max-width: 100%; }
+  max-width: 100%;
+}
