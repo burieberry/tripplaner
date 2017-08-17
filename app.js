@@ -23,24 +23,13 @@ app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstra
 app.use('/jQuery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 app.get('/', (req, res, next) => {
-  let model = {};
   Promise.all([
     Hotel.findAll(),
     Restaurant.findAll(),
     Activity.findAll()
     ])
     .then(([ hotels, restaurants, activities ]) => {
-      model.hotels = hotels;
-      model.restaurants = restaurants;
-      model.activities = activities;
-      return model;
-    })
-    .then((model) => {
-      return res.render('index', {
-        hotels: model.hotels,
-        restaurants: model.restaurants,
-        activities: model.activities
-      })
+      return res.render('index', { hotels, restaurants, activities });
     })
     .catch(next);
 });
