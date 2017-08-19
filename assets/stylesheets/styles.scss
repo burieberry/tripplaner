@@ -1,40 +1,35 @@
+$navlink: #3A015C;
+
 body {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  color: #222222;
   font-size: 16px;
 }
 
 a:hover {
+  color: #8789c0;
   text-decoration: none;
 }
 
-#nav {
-  background-color: #84A98C;
-}
-
 #headline {
-  a {
-    color: #000;
-  }
-  font-size: 2.125em;
+  margin: 0;
   padding: 0 40px;
 }
 
 // menus
 
-// dark purple: 52489C
-
 #options-menu {
-  background-color: #CAD2C5;
+  background-color: #bbcde5;;
 }
 
 #day-menu {
-  background-color: #EBEBEB;
+  background-color: #e6e8e6;
 }
 
 #schedule-menu {
-  background-color: #59C3C3;
+  background-color: #92dce5;
 }
 
 label,
@@ -46,6 +41,10 @@ select {
   width: 240px;
 }
 
+.panel-body {
+  margin: 0;
+}
+
 .list-item {
   padding-bottom: 20px;
 }
@@ -54,8 +53,16 @@ select {
   padding-bottom: none;
 }
 
-.item-head {
-  // color: #52489C;
+.navbar-brand {
+  color: $navlink;
 }
 
+.nav-link {
+  color: $navlink;
+  padding-right: 30px;
+}
+
+#navigation {
+  background-color: #fafafa;
+}
 
