@@ -4,10 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "post-install": "node-sass assets/stylesheets/styles.scss -o public/stylesheets",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "start:dev": "DATABASE_URL=postgres://localhost/tripplanner_db nodemon -e html,css,js app.js",
-    "build:css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
+    "start:dev": "DATABASE_URL=postgres://localhost/tripplanner_db nodemon -e html,scss,css,js app.js & npm run build-css:dev",
+    "build-css:dev": "node-sass -w assets/stylesheets/styles.scss -o public/stylesheets"
   },
   "keywords": [],
   "author": "",
