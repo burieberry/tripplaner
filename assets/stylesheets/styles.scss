@@ -5,10 +5,36 @@ body {
   font-size: 16px;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
+#nav {
+  background-color: #84A98C;
+}
+
 #headline {
-  border-bottom: 2px solid #999;
-  font-size: 2em;
-  padding: 0 20px 10px 40px;
+  a {
+    color: #000;
+  }
+  font-size: 2.125em;
+  padding: 0 40px;
+}
+
+// menus
+
+// dark purple: 52489C
+
+#options-menu {
+  background-color: #CAD2C5;
+}
+
+#day-menu {
+  background-color: #EBEBEB;
+}
+
+#schedule-menu {
+  background-color: #59C3C3;
 }
 
 label,
@@ -27,4 +53,9 @@ select {
 .list-item:last-child {
   padding-bottom: none;
 }
+
+.item-head {
+  // color: #52489C;
+}
+
 

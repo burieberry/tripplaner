@@ -1,7 +1,7 @@
 <section class="panel panel-default" id="options-menu">
   <ul class="panel-body list-unstyled">
     <li class="list-item">
-      <label>Hotels:</label>
+      <label class="item-head">Hotels:</label>
       <select name="hotelId">
         {% for hotel in hotels %}
         <option value="{{ hotel.id }}">{{ hotel.name }}</option>
@@ -11,7 +11,7 @@
     </li>
 
     <li class="list-item">
-      <label>Restaurants:</label>
+      <label class="item-head">Restaurants:</label>
       <select name="restaurantId">
         {% for restaurant in restaurants %}
         <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
@@ -21,7 +21,7 @@
     </li>
 
     <li class="list-item">
-      <label>Activities:</label>
+      <label class="item-head">Activities:</label>
       <select name="activityId">
         {% for activity in activities %}
         <option value="{{ activity.id }}">{{ activity.name }}</option>
