@@ -1,7 +1,6 @@
 {
-  "name": "tripplanner-static-ui",
+  "name": "tripplanner",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "postinstall": "node-sass assets/stylesheets/styles.scss -o public/stylesheets",
@@ -26,5 +25,14 @@
     "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burieberry/tripplanner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/burieberry/tripplanner/issues"
+  },
+  "homepage": "https://github.com/burieberry/tripplanner#readme",
+  "description": ""
 }
