@@ -1,5 +1,3 @@
-$navlink: #3A015C;
-
 body {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -13,56 +11,53 @@ a:hover {
   text-decoration: none;
 }
 
+// navbar
+$navlink: #3A015C;
+
 #headline {
   margin: 0;
   padding: 0 40px;
 }
-
-// menus
-
-#options-menu {
-  background-color: #bbcde5;;
+#navigation {
+  background-color: #fafafa;
 }
-
-#day-menu {
-  background-color: #e6e8e6;
-}
-
-#schedule-menu {
-  background-color: #92dce5;
-}
-
-label,
-option {
-  display: block;
-}
-
-select {
-  width: 240px;
-}
-
-.panel-body {
-  margin: 0;
-}
-
-.list-item {
-  padding-bottom: 20px;
-}
-
-.list-item:last-child {
-  padding-bottom: none;
-}
-
 .navbar-brand {
   color: $navlink;
 }
-
 .nav-link {
   color: $navlink;
   padding-right: 30px;
 }
 
-#navigation {
-  background-color: #fafafa;
+// menus
+label,
+option {
+  display: block;
+}
+select {
+  width: 240px;
+}
+#options-menu {
+  background-color: #bbcde5;;
+}
+#day-menu {
+  background-color: #e6e8e6;
+}
+#schedule-menu {
+  background-color: #92dce5;
+}
+.panel-body {
+  margin: 0;
+}
+.list-item {
+  padding-bottom: 20px;
+}
+.list-item:last-child {
+  padding-bottom: none;
 }
 
+// map
+
+#map {
+  height: 86%;
+}

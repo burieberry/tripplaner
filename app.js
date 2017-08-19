@@ -22,6 +22,18 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 app.use('/jQuery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
+let config = process.env;
+try {
+  config = require('./env.json');
+}
+catch (ex) {
+
+}
+app.use((req, res, next) => {
+  res.locals.GOOGLE_API_KEY = config.GOOGLE_API_KEY;
+  next();
+});
+
 app.get('/', (req, res, next) => {
   Promise.all([
     Hotel.findAll(),
