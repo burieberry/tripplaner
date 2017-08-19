@@ -11,17 +11,20 @@ body {
   padding: 0 20px 10px 40px;
 }
 
-#menu {
-  border: 1px solid #ccc;
-  // display: inline-block;
-  font-size: 14px;
-  padding: 30px 10px 30px 20px;
-  width: 350px;
-}
-
 label,
 option {
   display: block;
-  max-width: 100%;
+}
+
+select {
+  width: 240px;
+}
+
+.list-item {
+  padding-bottom: 20px;
+}
+
+.list-item:last-child {
+  padding-bottom: none;
 }
 

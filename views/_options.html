@@ -1,27 +1,33 @@
-<ul class="list-unstyled" id="menu">
-  <li><label>Hotels:</label>
-  <select name="hotelId">
-    {% for hotel in hotels %}
-    <option value="{{ hotel.id }}">{{ hotel.name }}</option>
-    {% endfor %}
-  </select>
-  </li>
+<section class="panel panel-default" id="options-menu">
+  <ul class="panel-body list-unstyled">
+    <li class="list-item">
+      <label>Hotels:</label>
+      <select name="hotelId">
+        {% for hotel in hotels %}
+        <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+        {% endfor %}
+      </select>
+      <button class="btn-xs btn-danger">x</button>
+    </li>
 
-  <li>
-  <label>Restaurants:</label>
-  <select name="restaurantId">
-    {% for restaurant in restaurants %}
-    <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
-    {% endfor %}
-  </select>
-  </li>
+    <li class="list-item">
+      <label>Restaurants:</label>
+      <select name="restaurantId">
+        {% for restaurant in restaurants %}
+        <option value="{{ restaurant.id }}">{{ restaurant.name }}</option>
+        {% endfor %}
+      </select>
+      <button class="btn-xs btn-danger">x</button>
+    </li>
 
-  <li>
-  <label>Activities:</label>
-  <select name="activityId">
-    {% for activity in activities %}
-    <option value="{{ activity.id }}">{{ activity.name }}</option>
-    {% endfor %}
-  </select>
-  </li>
-</ul>
+    <li class="list-item">
+      <label>Activities:</label>
+      <select name="activityId">
+        {% for activity in activities %}
+        <option value="{{ activity.id }}">{{ activity.name }}</option>
+        {% endfor %}
+      </select>
+      <button class="btn-xs btn-danger">x</button>
+    </li>
+  </ul>
+</section>
